@@ -75,7 +75,7 @@ public class UdpSender : MonoBehaviour
         Send(data, remote);
     }
 
-    void Start()
+    void Awake()
     {
         CreateRemoteEP(remoteIp, remotePort);
     }

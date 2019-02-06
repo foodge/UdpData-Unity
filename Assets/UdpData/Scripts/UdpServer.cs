@@ -43,7 +43,7 @@ public abstract class UdpServer : MonoBehaviour
         }
     }
 
-    void Start()
+    void Awake()
     {
         receiveBuffer = new byte[1 << 16];
         StartServer(localPort);

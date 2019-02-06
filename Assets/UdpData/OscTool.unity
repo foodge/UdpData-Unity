@@ -323,9 +323,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69163ce0f4a448a48915142d54c5552a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remoteIp: localhost
+  remoteIp: 192.168.11.22
   useBroadCast: 0
-  remotePort: 8888
+  remotePort: 8010
 --- !u!114 &2052002482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
   onDataReceived:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: OscServer+OscMsgEvent, Assembly-CSharp, Version=1.0.6954.1546, Culture=neutral,
+    m_TypeName: OscServer+OscMsgEvent, Assembly-CSharp, Version=1.0.6974.33928, Culture=neutral,
       PublicKeyToken=null
   oscAddressEvents: []
   logCapacity: 30

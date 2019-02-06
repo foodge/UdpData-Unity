@@ -39,6 +39,18 @@ public class OscServer : UdpServer
         }
     }
 
+    protected void OnEnable()   // Awake使うと受信おかしくなる。startでは遅い。
+    {
+        if(onDataReceived == null)
+        {
+            onDataReceived = new OscMsgEvent();
+        }
+        if (oscAddressEvents == null)
+        {
+            oscAddressEvents = new List<OscAddressEventPair>();
+        }
+    }
+
     protected void Update()
     {
         lock (receivedDataQueue)
