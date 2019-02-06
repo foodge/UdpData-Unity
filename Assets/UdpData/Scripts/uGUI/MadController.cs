@@ -39,20 +39,30 @@ public class MadController : MonoBehaviour
     private void onDataReceived(Message message)
     {
         onStringDataRecieved.Invoke(message.ToString());
+        /*
         string path = "/surfaces/";
         if (message.path.StartsWith(path)) {
-            string str = message.path.Substring(path.Length);
-            if (!str.Equals("selected")) {
-                if (str.IndexOf('/') < 0)
+            string str = message.path.Substring(path.Length);                       // パス部分削除
+            if (!str.Equals("selected")) {                                          // "selected"除外
+                if (str.IndexOf('/') < 0)                                           // 区切り検出
                 {
                     Array.Resize(ref surfaceNameList, surfaceNameList.Length + 1);
-                    surfaceNameList[surfaceNameList.Length - 1] = str;
+                    surfaceNameList[surfaceNameList.Length - 1] = str;              // サーフェス名保存
                     Debug.Log(str);
-                    onSurfaceNameChanged.Invoke(surfaceNameList);
+                    onSurfaceNameChanged.Invoke(surfaceNameList);                   // スイッチャーtext書き換え用イベント
                 }
             }
         }
-        
+        */
+        string[] str = message.path.Split('/');
+        foreach (string s in str) {
+            if (s.Equals("surface")) {
+                if (s.Equals("surface")) {
+
+                }
+            }
+        }
+        // getControlValues?url=/surfaces/.*/visual/name&normalized=0
         /*
         foreach (var log in server.OscLog)
         {
